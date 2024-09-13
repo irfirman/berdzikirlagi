@@ -8,8 +8,9 @@ const counts = {
 
 // Menyimpan kategori yang dipilih
 let currentCategory = 'default';
+let soundEnabled = false; // Status suara default: dinonaktifkan
 
-/* Fungsi untuk meng-update elemen display dengan nilai terbaru */
+/* Fungsi untuk menampilkan angka yang diperbarui */
 function updateDisplay() {
   document.getElementById('display').innerText = counts[currentCategory]; // Menampilkan hitungan untuk kategori yang dipilih
 }
@@ -18,6 +19,11 @@ function updateDisplay() {
 function increment() {
   counts[currentCategory]++; // Menambah hitungan untuk kategori yang dipilih
   updateDisplay(); // Memperbarui tampilan angka
+
+  // Jika fitur suara diaktifkan, putar suara
+  if (soundEnabled) {
+    document.getElementById('soundEffect').play();
+  }
 
   // Jika perangkat mendukung vibrasi, maka ponsel akan bergetar
   if (navigator.vibrate) {
@@ -30,6 +36,11 @@ function decrement() {
   if (counts[currentCategory] > 0) { // Memastikan nilai hitungan tidak kurang dari 0
     counts[currentCategory]--; // Mengurangi hitungan untuk kategori yang dipilih
     updateDisplay(); // Memperbarui tampilan angka
+
+    // Jika fitur suara diaktifkan, putar suara
+    if (soundEnabled) {
+      document.getElementById('backSoundEffect').play();
+    }
   }
 }
 
@@ -44,4 +55,17 @@ function updateCategory() {
   const select = document.getElementById('categorySelect');
   currentCategory = select.value; // Mendapatkan nilai kategori yang dipilih
   updateDisplay(); // Memperbarui tampilan angka untuk kategori yang dipilih
+}
+
+/* Fungsi untuk mengaktifkan/menonaktifkan suara */
+function toggleSound() {
+  soundEnabled = !soundEnabled; // Membalik status suara
+  const soundButton = document.getElementById('soundToggle');
+
+  // Mengubah teks tombol berdasarkan status suara
+  if (soundEnabled) {
+    soundButton.innerText = "Disable Sound";
+  } else {
+    soundButton.innerText = "Enable Sound";
+  }
 }
