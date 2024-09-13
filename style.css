@@ -1,41 +1,49 @@
-/* Mengatur tampilan dasar untuk halaman */
-body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #f0f0f0;
+/* Pengaturan dasar untuk kontainer aplikasi */
+.container {
+  text-align: center;
+  margin-top: 50px;
 }
 
-/* Mengatur tampilan kontainer utama */
-.container {
+/* Gaya untuk elemen tampilan angka (display) */
+#display {
+  font-size: 3rem;
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #333;
+  display: inline-block;
+  width: 100px;
   text-align: center;
 }
 
-/* Styling untuk dropdown kategori */
-#categorySelect {
-  font-size: 1rem;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-/* Styling untuk tampilan hitungan angka */
-#display {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-/* Styling untuk tombol */
+/* Gaya untuk tombol-tombol (Count, Back, Reset) */
 .buttons button {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 10px 20px;
   margin: 10px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Efek hover pada tombol */
+/* Gaya ketika tombol di-hover */
 .buttons button:hover {
-  background-color: #ddd;
+  background-color: #45a049;
+}
+
+/* Gaya untuk dropdown kategori */
+#categorySelect {
+  font-size: 1.2rem;
+  padding: 5px;
+  margin: 20px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+/* Gaya untuk elemen iklan */
+.ads {
+  margin-top: 20px;
+  padding: 10px;
 }
