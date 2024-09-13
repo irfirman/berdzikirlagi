@@ -1,0 +1,41 @@
+/* Mengatur tampilan dasar untuk halaman */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+/* Mengatur tampilan kontainer utama */
+.container {
+  text-align: center;
+}
+
+/* Styling untuk dropdown kategori */
+#categorySelect {
+  font-size: 1rem;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* Styling untuk tampilan hitungan angka */
+#display {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+/* Styling untuk tombol */
+.buttons button {
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* Efek hover pada tombol */
+.buttons button:hover {
+  background-color: #ddd;
+}
