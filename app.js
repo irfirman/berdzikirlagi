@@ -33,6 +33,12 @@ function decrement() {
   }
 }
 
+/* Fungsi untuk mengatur ulang hitungan */
+function resetCount() {
+  counts[currentCategory] = 0; // Mengatur hitungan kategori saat ini ke 0
+  updateDisplay(); // Memperbarui tampilan angka
+}
+
 /* Fungsi untuk memperbarui kategori yang dipilih */
 function updateCategory() {
   const select = document.getElementById('categorySelect');
