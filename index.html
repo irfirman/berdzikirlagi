@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Counting App with Reset</title>
+  <title>Counting App with Sound</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Counting App</h1>
+    <h1>Counting App with Sound</h1>
 
     <!-- Dropdown untuk memilih kategori -->
     <select id="categorySelect" onchange="updateCategory()">
@@ -25,8 +25,17 @@
     <div class="buttons">
       <button onclick="increment()">Count</button>
       <button onclick="decrement()">Back</button>
-      <button onclick="resetCount()">Reset</button> <!-- Tombol Reset baru -->
+      <button onclick="resetCount()">Reset</button>
     </div>
+
+    <!-- Tombol untuk mengaktifkan/menonaktifkan suara -->
+    <div class="sound-control">
+      <button id="soundToggle" onclick="toggleSound()">Enable Sound</button>
+    </div>
+
+    <!-- Memuat file suara -->
+    <audio id="soundEffect" src="count-sound.mp3" preload="auto"></audio>
+    <audio id="backSoundEffect" src="back-sound.mp3" preload="auto"></audio>
   </div>
 
   <script src="app.js"></script>
