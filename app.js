@@ -20,9 +20,10 @@ function increment() {
   counts[currentCategory]++; // Menambah hitungan untuk kategori yang dipilih
   updateDisplay(); // Memperbarui tampilan angka
 
-  // Jika fitur suara diaktifkan, putar suara
+  // Jika fitur suara diaktifkan, buat instance baru audio dan putar
   if (soundEnabled) {
-    document.getElementById('soundEffect').play();
+    const sound = new Audio('count-sound.mp3');
+    sound.play();
   }
 
   // Jika perangkat mendukung vibrasi, maka ponsel akan bergetar
@@ -37,9 +38,10 @@ function decrement() {
     counts[currentCategory]--; // Mengurangi hitungan untuk kategori yang dipilih
     updateDisplay(); // Memperbarui tampilan angka
 
-    // Jika fitur suara diaktifkan, putar suara
+    // Jika fitur suara diaktifkan, buat instance baru audio dan putar
     if (soundEnabled) {
-      document.getElementById('backSoundEffect').play();
+      const backSound = new Audio('back-sound.mp3');
+      backSound.play();
     }
   }
 }
@@ -69,3 +71,5 @@ function toggleSound() {
     soundButton.innerText = "Enable Sound";
   }
 }
+
+
